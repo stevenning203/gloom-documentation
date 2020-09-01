@@ -12,7 +12,8 @@
 					<li>Installation</li>
 					<li><a href = "usage">Usage</a></li>
 					<li><a href = "template.html">Template</a></li>
-					<li><a href = "doc.html">Documentation</a></li>
+					<li><a href = "documentation.html">Documentation</a></li>
+					<li><a href = "examples.html">Examples</a></li>
 					<li><a href = "credits.html">Credits</a></li>
 				</ul>
 			</nav>
@@ -20,6 +21,12 @@
 		<p>
 			Okay! You've decided that you want to use gloom. Now how do you install gloom?
 			As an avid user of Visual Studio, I only support usage of Visual Studio, and have never compiled a C++ program outside of VS. As a result, I will only support Visual Studio with the installation instructions.
+		</p>
+		<p>
+			First, you need to head over to the <a href = "#">Github releases page</a> and get the latest version of gloom, which will come in a .zip source file container. Simply drop the "include", "lib-vc2019", and "res" folder in the same folder as your main.cpp file, and then link the libraries by going to your project settings, then linker, then input, and paste "glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;glew32s.lib;assimp.lib" without the quotes into the "Additional Dependencies" section. Then go into Linker -> General, and in Additional Library Dependencies, paste "$(PROJECTDIR)lib-vc2019;%(AdditionalLibraryDirectories)" without the quotes. From there, go into C/C++, general, and then in "Addition include directories" paste "$(PROJECTDIR)include" without the quotes. In your main.cpp file, type in "#include &ltgloom.h&gt and then you're all set to go!
+		</p>
+		<p>
+			To get started with your first program, head over to the template page to get a simple template.
 		</p>
 	</body>
 </html>

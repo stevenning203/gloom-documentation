@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			.collapsible {
+			  background-color: #777;
+			  color: white;
+			  cursor: pointer;
+			  padding: 18px;
+			  width: 100%;
+			  border: none;
+			  text-align: left;
+			  outline: none;
+			  font-size: 15px;
+			}
+			
+			.active, .collapsible:hover {
+			  background-color: #555;
+			}
+			
+			.content {
+			  padding: 0 18px;
+			  display: none;
+			  overflow: hidden;
+			  background-color: #f1f1f1;
+			}
+			</style>
+		<link rel = "stylesheet" href = "resources/css/index.css">
+	</head>
+	<body>
+		<a href = index.html><img src = "resources/assets/gloom-logo.png" class = "logo"></a>
+		<header>
+			<nav>
+				<ul class = "nav">
+					<li><a href = "index.html">Home</a></li>
+					<li><a href = "installation.html">Installation</a></li>
+					<li><a href = "usage">Usage</a></li>
+					<li><a href = "template.html">Template</a></li>
+					<li>Documentation</li>
+					<li><a href = "examples.html">Examples</a></li>
+					<li><a href = "credits.html">Credits</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<button type = "button" class = "collapsible">gloInit()</button>
+		<div class="content">
+			Inits gloom. Required to be called. Preferrably called first before any other methods in main(). <br><br>
+			gloInit(width, height, title, fullscreen)<br>
+			<br>
+			(int) width: the width in pixels of the window<br>
+			(int) height: the height in pixels of the window<br>
+			(const char *) title: the title of the window<br>
+			(bool) fullscreen: whether the window is fullscreen or not
+			<br>
+			<br>
+			returns: (GLFWwindow*)
+			<br>
+			<br>
+			example:<br><br>
+			<div class = "code">GLFWwindow* window = glo::gloInit(1280, 720, "Glo Window", false);</div>
+		</div>
+		
+		<button type = "button" class = "collapsible">setClearColor()</button>
+		<div class="content">
+			Sets the clear color for OpenGL. By default (if not called) it is black, or (0.0f, 0.0f, 0.0f). <br><br>
+			setClearColor(r, g, b);<br><br>
+			(float) r: the amount of red in the clear color<br>
+			(float) g: the amount of green in the clear color<br>
+			(float) b: the amount of blue in the clear color<br>
+			<br>
+			NOTE: VALUES RANGE FROM 0 TO 1; NOT FROM 0 TO 255.
+			<br>
+			<br>
+			returns: VOID
+			<br>
+			<br>
+			example:
+			<br>
+			<br>
+			<div class = "code">glo::setClearColor(0.75f, 0.75f, 0.6f);</div>
+		</div>
+
+		<script>
+			var coll = document.getElementsByClassName("collapsible");
+			var i;
+			
+			for (i = 0; i < coll.length; i++) {
+			  coll[i].addEventListener("click", function() {
+				this.classList.toggle("active");
+				var content = this.nextElementSibling;
+				if (content.style.display === "block") {
+				  content.style.display = "none";
+				} else {
+				  content.style.display = "block";
+				}
+			  });
+			}
+		</script>
+	</body>
+	<!DOCTYPE html>
+</html>

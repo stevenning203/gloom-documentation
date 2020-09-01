@@ -51,3 +51,57 @@ p{
 	padding-top: 10px;
 	padding-right: 40px;
 }
+
+a{
+	color:#5c74ff;
+}
+
+code{
+	padding: 30px 11%;
+}
+
+.code{
+	margin: 0px 8%;
+	padding: 0px 3%;
+	border: 0px;
+	border-style: solid;
+	background-color: #9c9c9c;
+}
+
+.grey{
+	color: #ff9898;
+}
+
+.blue{
+	color: lightskyblue;
+}
+
+.purple{
+	color: purple;
+}
+
+.yellow{
+	color: #fff177;
+}
+
+button{
+	background-color: black;
+	padding: 3px;
+	margin-bottom: 5px;
+}
+
+.content{
+	display: none;
+	overflow: hidden;
+	padding: 10px;
+	background-color: black;
+	color:whitesmoke;
+}
+
+.collapsible{
+	cursor: pointer;
+}
+
+body{
+	background-color: rgb(27, 27, 27);
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel = "stylesheet" href = "resources/css/index.css">
+	</head>
+	<body>
+		<a href = index.html><img src = "resources/assets/gloom-logo.png" class = "logo"></a>
+		<header>
+			<nav>
+				<ul class = "nav">
+					<li><a href = "index.html">Home</a></li>
+					<li><a href = "installation.html">Installation</a></li>
+					<li><a href = "usage">Usage</a></li>
+					<li>Template</li>
+					<li><a href = "documentation.html">Documentation</a></li>
+					<li><a href = "examples.html">Examples</a></li>
+					<li><a href = "credits.html">Credits</a></li>
+				</ul>
+			</nav>
+		</header>
+		<p>
+			Here is the gloom template! It includes comments so you understand what each command does. Most gloom commands are self-explanatory. In the template, you get an empty world<br>
+			where you can move the camera around in. To load a model, head over to the <a href = "documentation.html">Documentation</a> page in order to see what commands to use.
+		</p>
+		<p>
+			<figure class = "code">
+				<pre>
+					<code>
+						<div>
+<span class = "grey">#include</span> "gloom.h"
+
+<span class = "blue">const unsigned short</span> width = <span class = "purple">1920</span>;
+<span class = "blue">const unsigned short</span> height = <span class = "purple">1080</span>;
+<span class = "blue">double</span> lastTime = <span class = "purple">0</span>;
+
+<span class = "blue">int</span> <span class = "yellow">main</span>()
+{
+	<span class = "blue">GLFWwindow*</span> window = glo::<span class = "yellow">gloInit</span>(width, height, <span class = "purple">"gloom demo"</span>, <span class = "purple">true</span>);
+	glo::<span class = "yellow">setClearColor</span>(<span class = "purple">0.75f</span>, <span class = "purple">0.75f</span>, <span class = "purple">0.75f</span>);
+	glo::<span class = "yellow">setMouseMode</span>(<span class = "purple">GLO_MOUSE_MODE_HIDE</span>);
+	while (!glo::<span class = "yellow">queueExit</span>())
+	{
+		glo::<span class = "yellow">clearBuffer</span>();
+		<span class = "blue">double</span> currentTime = glo::<span class = "yellow">getTime</span>();
+		<span class = "blue">float</span> deltaTime = <span class = "yellow">float</span>(currentTime - lastTime);
+		lastTime = currentTime;
+		glo::<span class = "yellow">cameraUpdate</span>(deltaTime);
+		if (glo::<span class = "yellow">getKey</span>(<span class = "purple">GLFW_KEY_ESCAPE</span>))
+		{
+			glo::<span class = "yellow">terminate</span>();
+		}
+		//render
+		
+		//endrender
+		glo::<span class = "yellow">forceLowInput</span>();
+		glo::<span class = "yellow">flipDisplay</span>();
+		glo::<span class = "yellow">poll</span>();
+	}
+	glo::<span class = "yellow">terminate</span>();
+	return <span class = "purple">0</span>;
+}
+						</div>
+					</code>
+				</pre>
+			</figure>
+		</p>
+	</body>
+</html>

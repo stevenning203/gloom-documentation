@@ -80,6 +80,173 @@
 			<br>
 			<div class = "code">glo::setClearColor(0.75f, 0.75f, 0.6f);</div>
 		</div>
+		<button type = "button" class = "collapsible">terminate</button>
+		<div class="content">
+			Call to terminate glfw. Kills the window.
+			<br>
+			NOTE: call to end the window.
+			<br>
+			<br>
+			returns: VOID
+			<br>
+			<br>
+			example: 
+			<br>
+			<br>
+			<div class = "code">glo::terminate();</div>
+		</div>
+
+		<button type = "button" class = "collapsible">clearBuffer()</button>
+		<div class="content">
+			Clears the OpenGL depth buffer and color bit buffer. Must be called every loop.
+			<br>
+			NOTE: Should probably call at the very beginning of every draw loop.
+			<br>
+			<br>
+			returns: VOID
+			<br>
+			<br>
+			example:
+			<br>
+			<br>
+			<div class = "code">glo::clearBuffer();</div>
+		</div>
+
+		<button type = "button" class = "collapsible">flipDisplay()</button>
+		<div class="content">
+			Updates the display. Must be called only once per loop.
+			<br>
+			NOTE: Should probably call at the very end of every draw loop.
+			<br>
+			<br>
+			returns: VOID
+			<br>
+			<br>
+			example:
+			<br>
+			<br>
+			<div class = "code">glo::flipDisplay();</div>
+		</div>
+
+		<button type = "button" class = "collapsible">forceLowInput()</button>
+		<div class="content">
+			Pushes frame as soon as its finished. Call once every loop.
+			<br>
+			NOTE: Produces low input lag. Call near the end of the loop.
+			<br>
+			<br>
+			returns: VOID
+			<br>
+			<br>
+			example:
+			<br>
+			<br>
+			<div class = "code">glo::forceLowInput();</div>
+		</div>
+
+		<button type = "button" class = "collapsible">poll()</button>
+		<div class="content">
+			Poll GLFW events. Must be called every loop.
+			<br>
+			NOTE: Should be called near the end of the draw loop.
+			<br>
+			<br>
+			returns: VOID
+			<br>
+			<br>
+			example:
+			<br>
+			<br>
+			<div class = "code">glo::poll();</div>
+		</div>
+
+		<button type = "button" class = "collapsible">enableWireframeMode()</button>
+		<div class="content">
+			Enables wireframe mode.
+			<br>
+			NOTE: Call once. Not needed every loop.
+			<br>
+			<br>
+			returns: VOID
+			<br>
+			<br>
+			example:
+			<br>
+			<br>
+			<div class = "code">glo::enableWireframeMode();</div>
+		</div>
+
+		<button type = "button" class = "collapsible">disableWireframeMode()</button>
+		<div class="content">
+			Disables wireframe mode.
+			<br>
+			NOTE: Call once. Not needed every loop.
+			<br>
+			<br>
+			returns: VOID
+			<br>
+			<br>
+			example:
+			<br>
+			<br>
+			<div class = "code">glo::disableWireframeMode();</div>
+		</div>
+
+		<button type = "button" class = "collapsible">getMVP()</button>
+		<div class="content">
+			Returns the Model View Projection Matrix.
+			<br>
+			NOTE: None
+			<br>
+			<br>
+			returns: glm::mat4
+			<br>
+			<br>
+			example:
+			<br>
+			<br>
+			<div class = "code">glm::mat4 modelViewProjMatrix = getMVP();</div>
+		</div>
+
+		<button type = "button" class = "collapsible">setCameraPos()</button>
+		<div class="content">
+			setCameraPos(glm::vec3 vectorPos)<br>
+			(glm::vec3) vectorPos : float vector of size 3 with x y and z coordinates<br>
+			<br>
+			overload:<br>
+			<br>
+			setCameraPos(float x, float y, float z)
+			(float) x : x coordinate in float<br>
+			(float) y : y coordinate in float<br>
+			(float) z : z coordinate in float
+			<br>
+			NOTE: None
+			<br>
+			<br>
+			returns: VOID
+			<br>
+			<br>
+			example:
+			<br>
+			<br>
+			<div class = "code">glo::setCameraPos(0.25f, 26.0f, 12.0f);</div>
+		</div>
+
+		<button type = "button" class = "collapsible">f</button>
+		<div class="content">
+			Enables wireframe mode.
+			<br>
+			NOTE: Call once. Not needed every loop.
+			<br>
+			<br>
+			returns: VOID
+			<br>
+			<br>
+			example:
+			<br>
+			<br>
+			<div class = "code">f</div>
+		</div>
 
 		<script>
 			var coll = document.getElementsByClassName("collapsible");
